@@ -33,7 +33,8 @@ export function getRecipeDetail(id) {
         return dispatch({type: GET_RECIPE_DETAIL, payload: recipeDetail.data.data });
         }
     catch(error){
-        console.log(error)
+        console.log(error.response)
+        return dispatch({type: GET_RECIPE_DETAIL, payload: {} });
     }
   }
 };
