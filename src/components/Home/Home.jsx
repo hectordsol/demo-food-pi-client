@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUtensils, faFilter } from '@fortawesome/free-solid-svg-icons'
-import { BsSearch } from 'react-icons/bs'
+//import { BsSearch } from 'react-icons/bs'
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom';
 import NavBar  from '../Navbar/Navbar';
@@ -89,7 +89,7 @@ useEffect(() => {
                       className={style.inputSearch}
                       onChange={onChange}
                       value={search}/>
-                <button type="submit" className={style.buttonSearch}><BsSearch /></button>  
+                <button type="submit" className={style.buttonSearch}> Search </button>  
               </form>
                 <div className={style.selectOptions}> 
                     <label className={style.labelBy}> Order By: </label>
