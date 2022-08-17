@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUtensils, faFilter } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faUtensils, faFilter } from '@fortawesome/free-solid-svg-icons'
 //import { BsSearch } from 'react-icons/bs'
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom';
@@ -78,7 +78,7 @@ useEffect(() => {
                   <div className={style.nada}></div>
                   <div className={style.title} data-text="Henry Food">Henry Food</div>
                   <NavLink className={style.iconCreate} to="/create" >
-                    <FontAwesomeIcon icon={faUtensils} /> 
+                    {/* <FontAwesomeIcon icon={faUtensils} />  */}
                     <label className={style.labelCreate}> Create Recipe</label>
                   </NavLink>
             </div>
@@ -105,7 +105,7 @@ useEffect(() => {
                     </select>
                     <div className={style.filter}>
                         <div className={style.formFilters}>
-                        <FontAwesomeIcon className={style.iconFilter} icon={faFilter} /> 
+                        {/* <FontAwesomeIcon className={style.iconFilter} icon={faFilter} />  */}
                             {
                             <select onChange={filterTypes} className={style.selectFilter}>
                             <option value="all"> Without filter</option>

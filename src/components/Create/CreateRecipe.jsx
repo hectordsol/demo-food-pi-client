@@ -1,7 +1,7 @@
 import style from './CreateRecipe.module.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
@@ -158,7 +158,7 @@ return (
               
               {render[0] &&
                       <div id={style.recipecreated}>
-                      <FontAwesomeIcon icon={faCoffee}/>
+                      {/* <FontAwesomeIcon icon={faCoffee}/> */}
                       {render}
                       </div>
                   }
