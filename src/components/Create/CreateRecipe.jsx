@@ -1,8 +1,5 @@
 import style from './CreateRecipe.module.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -158,7 +155,6 @@ return (
               
               {render[0] &&
                       <div id={style.recipecreated}>
-                      {/* <FontAwesomeIcon icon={faCoffee}/> */}
                       {render}
                       </div>
                   }
