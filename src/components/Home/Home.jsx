@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom';
 import NavBar  from '../Navbar/Navbar';
@@ -74,6 +75,7 @@ useEffect(() => {
                   <div className={style.nada}></div>
                   <div className={style.title} data-text="Henry Food">Henry Food</div>
                   <NavLink className={style.iconCreate} to="/create" >
+                    
                     <label className={style.labelCreate}> Create Recipe</label>
                   </NavLink>
             </div>
@@ -84,7 +86,7 @@ useEffect(() => {
                       className={style.inputSearch}
                       onChange={onChange}
                       value={search}/>
-                <button type="submit" className={style.buttonSearch}> Search </button>  
+                <button type="submit" className={style.buttonSearch}>Search</button>  
               </form>
                 <div className={style.selectOptions}> 
                     <label className={style.labelBy}> Order By: </label>
@@ -100,7 +102,6 @@ useEffect(() => {
                     </select>
                     <div className={style.filter}>
                         <div className={style.formFilters}>
-                            {
                             <select onChange={filterTypes} className={style.selectFilter}>
                             <option value="all"> Without filter</option>
                             {diets?.map((d) => (
@@ -110,7 +111,6 @@ useEffect(() => {
                               </option>
                             ))}
                             </select>
-                            }
                         </div>
                       </div>{/* filter diets */}      
                   </div>{/* selects */}

@@ -11,8 +11,10 @@ export default function Pagination({ recipes }) {
 
   const totalPages = Math.ceil(recipes.length / recipesForPage);
   useEffect(()=>{
-    
-  },[input]);
+    if (parseInt(input)!==page){
+      setInput(1);
+    }
+  },[page]);
 
   const previous = (e) => {
     setInput(page - 1);
@@ -40,7 +42,7 @@ export default function Pagination({ recipes }) {
   const handleChange = (e) => {
     setInput(e.target.value);
     if (input===page && (page===1) && (input!==1)) //control ingreso de input por teclado
-       setInput(1);
+       {setInput(1);dispatch(changePage(1));}
   };
   return (
     <div>

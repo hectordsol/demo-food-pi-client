@@ -2,25 +2,27 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getRecipeDetail, clearDetail } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+
 import NavBar from "../Navbar/Navbar";
 import style from "./RecipeDetail.module.css";
- 
+
 export default function RecipeDetail() {
   const { id } = useParams();
+  let {image, title, dishTypes, diets, summary, healthScore, instructions} = useSelector((state) => state.recipeDetail);
   const dispatch = useDispatch();
-  const { image, title, dishTypes, diets, summary, healthScore, instructions } =
-    useSelector((state) => state.recipeDetail);
-
   useEffect(() => {
     dispatch(getRecipeDetail(id));
     return () => {
       dispatch(clearDetail());
     };
   }, [id, dispatch]);
-
+  // const getDetails = ()=>{
+  //   details?{ image, title, dishTypes, diets, summary, healthScore, instructions } = details:details=null;    
+  // }
+  // const history = useHistory();
   return (
-    <div>
-       <NavBar/> 
+     <div>
+       <NavBar/>
       <div className={style.content}>
           <div className={style.scores}>
               <span id="healthScore">
@@ -83,7 +85,8 @@ export default function RecipeDetail() {
                 }
         </div>
         {/**instructions */}
-      </div>{/**content */}
+      </div>
+
     </div>
   );
 }

@@ -1,13 +1,12 @@
 import style from './CreateRecipe.module.css';
-
 import { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom';
+
 import { connect } from 'react-redux';
 import { createRecipe, getDietTypes } from '../../redux/actions';
 import Navbar from '../Navbar/Navbar';
 
 let validateName = /^[a-zA-Z\s]+$/;
-//let validateUrl = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/;
+
 function validate(input) {
   const errors = {};
   if (!input.title.length) errors.title = 'Please complete with a recipe name';
@@ -17,8 +16,6 @@ function validate(input) {
   if (input.healthScore < 1 || input.healthScore > 100) errors.healthScore = 'The score must be a number between 1 and 100';
   if (!input.instructions.length) errors.instructions = "This field cannot be empty";
   if (input.instructions.length < 80) errors.instructions = 'This field must be longer than 80 characters';
-  //if (input.image && !validateUrl.test(input.image)) errors.image = "This is not a valid URL";
-
   return errors;
 };
 
@@ -31,7 +28,6 @@ function CreateRecipe( { getDietTypes, createRecipe, diets } ) {
     diets: [],
     image:''
 });
-const history = useHistory();
 const [errors, setErrors] = useState({});
 const [render, setRender]= useState('');
 
@@ -62,7 +58,7 @@ function handleCheck(e){
 };
 function handleSubmit(e) {
   e.preventDefault();
-  if (Object.values(errors).length===0){
+  if (Object.values(errors).length===0 && input.title){
     createRecipe(input);
     setRender('Your recipe has been created succesfully');
     setInput({
@@ -116,8 +112,7 @@ return (
                               onChange={e => handleInputChange(e)}/>
                      { errors.healthScore && (<span className={style.msgs}>{errors.healthScore}</span>)}
                 </div>
-                {/* {errors.healthScore && (<span className={style.msgs}>{errors.healthScore}</span>)} */}
-
+                
                 <div key="formInputs3" className={style.nameInputs}>
                   <label key="label3" className={style.labels}>Instructions: </label>
                   <textarea 
@@ -155,6 +150,7 @@ return (
               
               {render[0] &&
                       <div id={style.recipecreated}>
+                      
                       {render}
                       </div>
                   }
