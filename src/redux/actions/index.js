@@ -1,5 +1,5 @@
 import axios from 'axios';
-const ROOT = 'https://food-pi-part06.herokuapp.com/'
+const ROOT = 'https://food-pi-part06.herokuapp.com'
 export const SEARCH_RECIPES = 'SEARCH_RECIPES';
 export const GET_RECIPE_DETAIL = 'GET_RECIPE_DETAIL';
 export const GET_DIETTYPES = 'GET_DIETTYPES';
